@@ -1,6 +1,8 @@
 name: Grafana Dashboard Apply
 on:
   push:
+    branches:
+    - master
     paths:
     - 'prombench/manifests/cluster-infra/grafana_dashboard_dashboards_noparse.yaml'
 jobs:
