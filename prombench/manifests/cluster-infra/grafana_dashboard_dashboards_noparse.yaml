@@ -2134,7 +2134,7 @@ data:
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Prometheus Version",
+          "title": "Prometheus Versiosasasasn",
           "tooltip": {
           "shared": true,
           "sort": 0,
