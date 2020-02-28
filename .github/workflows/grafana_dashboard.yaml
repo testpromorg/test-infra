@@ -21,7 +21,7 @@ jobs:
         TEST_INFRA_REPO: https://github.com/testpromorg/test-infra.git
       with:
         args: >-
-          ./prombench gke resource apply -a $AUTH_FILE \
-          -v PROJECT_ID:$PROJECT_ID -v ZONE:$ZONE \
-          -v CLUSTER_NAME:$CLUSTER_NAME \
+          ./prombench gke resource apply -a $AUTH_FILE
+          -v PROJECT_ID:$PROJECT_ID -v ZONE:$ZONE
+          -v CLUSTER_NAME:$CLUSTER_NAME
           -f manifests/cluster-infra/grafana_dashboard_dashboards_noparse.yaml
