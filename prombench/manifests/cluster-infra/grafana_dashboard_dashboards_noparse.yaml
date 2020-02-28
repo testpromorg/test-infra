@@ -27,7 +27,7 @@ data:
       ],
       "id": null,
       "title": "Node Metrics",
-      "description": "Dashboard to view Node metrics",
+      "description": "Dashbord to view Node metrics",
       "tags": [
         "nodes",
         "node-metrics"
