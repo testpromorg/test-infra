@@ -12,6 +12,16 @@ jobs:
     steps:
     - name: Hello World
       id: hello_world
-      uses: actions/hello-world-javascript-action@v1
+      uses: docker://prombench/prombench:2.0.2
+      env:
+        AUTH_FILE: ${{ secrets.PROMBENCH_GKE_AUTH }}
+        PROJECT_ID: prombench-gsoc
+        CLUSTER_NAME: prombench
+        ZONE: europe-west3-a
+        TEST_INFRA_REPO: https://github.com/testpromorg/test-infra.git
       with:
-        who-to-greet: 'Mona the Octocat'
+        args: >-
+          ./prombench gke resource apply -a $AUTH_FILE \
+          -v PROJECT_ID:$PROJECT_ID -v ZONE:$ZONE \
+          -v CLUSTER_NAME:$CLUSTER_NAME \
+          -f manifests/cluster-infra/grafana_dashboard_dashboards_noparse.yaml
