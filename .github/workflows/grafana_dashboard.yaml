@@ -1,0 +1,15 @@
+name: Grafana Dashboard Apply
+on:
+  push:
+    paths:
+    - 'prombench/manifests/cluster-infra/grafana_dashboard_dashboards_noparse.yaml'
+jobs:
+  apply_grafana_dashboard:
+    name: Apply Configmap
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello World
+      id: hello_world
+      uses: actions/hello-world-javascript-action@v1
+      with:
+        who-to-greet: 'Mona the Octocat'
